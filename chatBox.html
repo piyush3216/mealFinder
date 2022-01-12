@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+ <head>
+     <title>Chat Box</title>
+     <style>
+         #chatBox{
+             height: 200px;
+             width: 300px;
+             background-color: #0000ff;
+             text-align: center; 
+             position:sticky;
+             margin-top: 500px;
+             margin-left: 1200px;
+         }
+         #chat{
+             width: 243px;
+         }
+         #chat, #send{
+            margin-top: 115px;
+            position: relative;
+            float: left;
+         }
+     </style>
+ </head>
+ <body>
+     
+     <div style="visibility: hidden" id="chatBox" onload="handleChat()">
+         <h1>Chat Box</h1>
+         <p id="msg"></p>
+         <input type="text" id="chat">
+         <button id="send" onclick="Send()">Send</button>
+     </div>
+     <script>
+         setTimeout(function handleChat(){
+            document.getElementById("chatBox").style.visibility = "visible";
+         },5000);
+        function Send(){
+            var msg = document.getElementById("chat").value;
+            document.getElementById("msg").innerHTML = msg;
+        }
+     </script>    
+ </body>
+</html>
